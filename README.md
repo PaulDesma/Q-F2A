@@ -1,9 +1,11 @@
 Q+F2A
 ==========
 
-Python code used to compute the frequency dependent admittance of Electric Double Layer using Brownian Dynamics using forces on ions and, inspired from Q2Z of Giovanni Pireddu (https://github.com/gpireddu/Q2Z).
+Python code to compute the frequency-dependent admittance of Electric Double Layer Capacitors from Brownian Dynamics simulations, inspired from Q2Z of Giovanni Pireddu for molecular dynamics (https://github.com/gpireddu/Q2Z).
 
-It takes the time series of the charge and sum of the forces over each ion species to compute the complexe admittance spectra. It is based on the linear response theory and relies on Laplace transform using Filon integrations.
+The method combines two estimators of the admittance based on linear response theory, one based on the charge of the electrode (computed from the ionic positions) and one based on the ionic current (computed from the forces acting on the ions), using a control variate approach.
+
+It takes as input the time series of the electrode charge and the relevant combination of the forces over each ion species to and computes the complex admittance as a function of frequency. Laplace transform are performed using Filon integrations.
  
  ---
 # Reference
@@ -40,10 +42,11 @@ Simply run:
 ```python3 MainAdmittance.py```
 
 The complex admittance and associated variance will be outputed in a file named ``` Admlen$[correlationLength]nfreq$[numberOfFrequencysampled]```  and ``` VarAdmlen$[correlationLength]nfreq$[numberOfFrequencysampled].data``` 
+
 # Notes
 
 * The code assumes a MetalWalls output format [https://gitlab.com/ampere2/metalwalls/-/wikis/output-files#total_charges.out](https://gitlab.com/ampere2/metalwalls/-/wikis/output-files#total_charges.out)
-* Parameters such as the temperature, duration of time steps and the list of desired frequencies are hard-coded, for the moment.
+* Parameters such as the temperature, duration of time steps and the list of desired frequencies are (currently) hard-coded.
 * The code is not tested for Python versions other than Python3
 
 
