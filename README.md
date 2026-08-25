@@ -3,7 +3,7 @@ Q+F2A
 
 Python code to compute the frequency-dependent admittance of Electric Double Layer Capacitors from Brownian Dynamics simulations, inspired from Q2Z of Giovanni Pireddu for molecular dynamics (https://github.com/gpireddu/Q2Z).
 
-The method combines two estimators of the admittance based on linear response theory, one based on the charge of the electrode (computed from the ionic positions) and one based on the ionic current (computed from the forces acting on the ions), using a control variate approach.
+The method combines two estimators of the admittance, one based on the charge of the electrode (computed from the ionic positions) and one based on the ionic current (computed from the forces acting on the ions), using a control variate approach.
 
 It takes as input the time series of the electrode charge and the relevant combination of the forces over each ion species to and computes the complex admittance as a function of frequency. Laplace transform are performed using Filon integrations.
  
